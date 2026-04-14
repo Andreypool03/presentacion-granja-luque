@@ -3,291 +3,439 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>asungood — Mockup Remera Oversize</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>asungood — Remera Oversize</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    :root {
+      --teal: #1089B5;
+      --black: #0D0D0D;
+      --page-bg: #F4F1EC;
+    }
+
     body {
-      background: #D6D3CA;
+      background: var(--page-bg);
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 52px 24px 80px;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 64px;
+    /* ── Banda superior ── */
+    .top-bar {
+      width: 100%;
+      background: var(--black);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .brand-logo {
+    .top-bar .brand {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 15px;
-      letter-spacing: 8px;
-      color: #111;
-      margin-bottom: 8px;
+      font-size: 22px;
+      letter-spacing: 6px;
+      color: #fff;
     }
-    .subtitle {
-      font-size: 11px;
+    .top-bar .tag {
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #777;
-      font-weight: 400;
+      color: #666;
     }
 
-    .mockup-grid {
-      display: flex;
-      gap: 64px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .view {
+    /* ── Contenido ── */
+    .content {
+      width: 100%;
+      max-width: 960px;
+      padding: 56px 24px 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 72px;
     }
 
-    .view-label {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #555;
-      font-weight: 500;
-    }
-
-    .tshirt-wrap {
-      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.22))
-              drop-shadow(0 4px 14px rgba(0,0,0,0.12));
-    }
-
-    .note {
-      margin-top: 72px;
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: #999;
-      text-transform: uppercase;
+    /* ── Intro ── */
+    .intro {
       text-align: center;
+    }
+    .intro h2 {
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #999;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .intro p {
+      font-size: 28px;
+      font-weight: 600;
+      color: #111;
+      letter-spacing: -0.5px;
+    }
+
+    /* ── Vistas ── */
+    .views {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .view-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .view-badge {
+      font-size: 9px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #999;
+      background: #E8E4DC;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .shirt-container {
+      filter:
+        drop-shadow(0 2px 1px rgba(0,0,0,0.06))
+        drop-shadow(0 8px 24px rgba(0,0,0,0.12))
+        drop-shadow(0 24px 56px rgba(0,0,0,0.08));
+    }
+
+    /* ── Detalle de diseño ── */
+    .design-detail {
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    /* ── Separador ── */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: #ccc;
+    }
+
+    /* ── Footer ── */
+    footer {
+      width: 100%;
+      padding: 24px;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bbb;
+      border-top: 1px solid #E0DDD6;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand-logo">ASUNGOOD</div>
-    <div class="subtitle">Remera Oversize &mdash; Mockup</div>
-  </header>
+  <div class="top-bar">
+    <span class="brand">ASUNGOOD</span>
+    <span class="tag">Colección 2025</span>
+  </div>
 
-  <div class="mockup-grid">
+  <div class="content">
 
-    <!-- ════════════ FRENTE ════════════ -->
-    <div class="view">
-      <span class="view-label">Frente</span>
-      <div class="tshirt-wrap">
-        <svg width="360" height="450" viewBox="0 0 400 490" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <!-- Remera blanca con gradiente sutil para volumen -->
-            <linearGradient id="shirtWhiteF" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stop-color="#E8E8E8"/>
-              <stop offset="20%"  stop-color="#F8F8F8"/>
-              <stop offset="50%"  stop-color="#FFFFFF"/>
-              <stop offset="80%"  stop-color="#F5F5F5"/>
-              <stop offset="100%" stop-color="#EBEBEB"/>
-            </linearGradient>
-            <!-- Sombra interna en mangas -->
-            <linearGradient id="sleeveShadeL" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"  stop-color="#D0D0D0" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="sleeveShadeR" x1="100%" y1="0%" x2="0%" y2="0%">
-              <stop offset="0%"  stop-color="#D0D0D0" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-
-          <!-- Silueta cuerpo remera oversize -->
-          <path d="
-            M 162,42
-            C 170,26 190,20 200,20
-            C 210,20 230,26 238,42
-            L 345,80
-            L 382,175
-            L 315,192
-            L 315,462
-            L 85,462
-            L 85,192
-            L 18,175
-            L 55,80
-            Z
-          " fill="url(#shirtWhiteF)" stroke="#CECECE" stroke-width="1"/>
-
-          <!-- Cuello redondo -->
-          <path d="M 162,42 C 168,72 183,84 200,86 C 217,84 232,72 238,42"
-                fill="#F0F0F0" stroke="#CECECE" stroke-width="1"/>
-
-          <!-- Pliegue de tela sutil en cuerpo -->
-          <line x1="200" y1="120" x2="197" y2="462" stroke="#E0E0E0" stroke-width="1.5" opacity="0.7"/>
-
-          <!-- Sombra bajo manga izquierda -->
-          <path d="M 18,175 L 85,192 L 85,220 L 18,200 Z" fill="url(#sleeveShadeL)" opacity="0.4"/>
-          <!-- Sombra bajo manga derecha -->
-          <path d="M 382,175 L 315,192 L 315,220 L 382,200 Z" fill="url(#sleeveShadeR)" opacity="0.4"/>
-
-          <!-- ─── LOGO FRENTE negro, pecho centrado ─── -->
-          <g transform="translate(200, 215)">
-
-            <!-- Línea 1: ASUN -->
-            <text
-              x="0" y="-22"
-              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
-              font-size="44"
-              fill="#111111"
-              text-anchor="middle"
-              letter-spacing="3"
-            >ASUN</text>
-
-            <!-- G -->
-            <text
-              x="-72" y="18"
-              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
-              font-size="44"
-              fill="#111111"
-              text-anchor="middle"
-            >G</text>
-
-            <!-- Flor 1 -->
-            <g transform="translate(-28, 0)">
-              <ellipse rx="11" ry="5"   fill="#111111" transform="rotate(0)"/>
-              <ellipse rx="8"  ry="3.5" fill="#111111" transform="rotate(45)"/>
-              <ellipse rx="11" ry="5"   fill="#111111" transform="rotate(90)"/>
-              <ellipse rx="8"  ry="3.5" fill="#111111" transform="rotate(135)"/>
-              <circle r="5"   fill="#FFFFFF"/>
-              <circle r="2.5" fill="#111111"/>
-            </g>
-
-            <!-- Flor 2 -->
-            <g transform="translate(18, 0)">
-              <ellipse rx="11" ry="5"   fill="#111111" transform="rotate(0)"/>
-              <ellipse rx="8"  ry="3.5" fill="#111111" transform="rotate(45)"/>
-              <ellipse rx="11" ry="5"   fill="#111111" transform="rotate(90)"/>
-              <ellipse rx="8"  ry="3.5" fill="#111111" transform="rotate(135)"/>
-              <circle r="5"   fill="#FFFFFF"/>
-              <circle r="2.5" fill="#111111"/>
-            </g>
-
-            <!-- D -->
-            <text
-              x="66" y="18"
-              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
-              font-size="44"
-              fill="#111111"
-              text-anchor="middle"
-            >D</text>
-
-          </g>
-
-        </svg>
-      </div>
-      <span class="view-label" style="color:#999; font-size:9px; letter-spacing:2px;">Logo pecho centrado</span>
+    <div class="intro">
+      <h2>Mockup</h2>
+      <p>Remera Oversize — Blanca</p>
     </div>
 
-    <!-- ════════════ ESPALDA ════════════ -->
-    <div class="view">
-      <span class="view-label">Espalda</span>
-      <div class="tshirt-wrap">
-        <svg width="360" height="450" viewBox="0 0 400 490" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="shirtWhiteB" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stop-color="#EBEBEB"/>
-              <stop offset="20%"  stop-color="#F5F5F5"/>
-              <stop offset="50%"  stop-color="#FFFFFF"/>
-              <stop offset="80%"  stop-color="#F8F8F8"/>
-              <stop offset="100%" stop-color="#E8E8E8"/>
-            </linearGradient>
-            <linearGradient id="sleeveShadeLB" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"  stop-color="#D0D0D0" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="sleeveShadeRB" x1="100%" y1="0%" x2="0%" y2="0%">
-              <stop offset="0%"  stop-color="#D0D0D0" stop-opacity="0.5"/>
-              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
+    <div class="views">
 
-          <!-- Silueta espalda -->
-          <path d="
-            M 162,42
-            C 170,26 190,20 200,20
-            C 210,20 230,26 238,42
-            L 345,80
-            L 382,175
-            L 315,192
-            L 315,462
-            L 85,462
-            L 85,192
-            L 18,175
-            L 55,80
-            Z
-          " fill="url(#shirtWhiteB)" stroke="#CECECE" stroke-width="1"/>
+      <!-- ═══════════════════════════
+           FRENTE
+      ════════════════════════════ -->
+      <div class="view-card">
+        <span class="view-badge">Frente</span>
 
-          <!-- Cuello espalda (más cerrado/alto) -->
-          <path d="M 162,42 C 168,54 183,61 200,62 C 217,61 232,54 238,42"
-                fill="#F0F0F0" stroke="#CECECE" stroke-width="1"/>
+        <div class="shirt-container">
+          <svg width="320" height="400" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Gradiente principal del tejido -->
+              <linearGradient id="fabricF" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#ECECEC"/>
+                <stop offset="30%"  stop-color="#F9F9F9"/>
+                <stop offset="60%"  stop-color="#FFFFFF"/>
+                <stop offset="100%" stop-color="#EFEFEF"/>
+              </linearGradient>
+              <!-- Sombra lateral izquierda (pliegue) -->
+              <linearGradient id="shadowL" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#C8C8C8" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="white"   stop-opacity="0"/>
+              </linearGradient>
+              <!-- Sombra lateral derecha -->
+              <linearGradient id="shadowR" x1="100%" y1="0%" x2="0%" y2="0%">
+                <stop offset="0%"   stop-color="#C8C8C8" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="white"   stop-opacity="0"/>
+              </linearGradient>
+              <!-- Sombra inferior mangas -->
+              <linearGradient id="sleeveBot" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#BBBBBB" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="white"   stop-opacity="0"/>
+              </linearGradient>
+              <!-- Clip para el logo dentro de la remera -->
+              <clipPath id="shirtClipF">
+                <path d="
+                  M 185,58
+                  C 200,28 300,28 315,58
+                  L 435,108
+                  L 478,230
+                  L 402,248
+                  L 402,572
+                  L 98,572
+                  L 98,248
+                  L 22,230
+                  L 65,108
+                  Z
+                "/>
+              </clipPath>
+            </defs>
 
-          <!-- Pliegue central sutil -->
-          <line x1="200" y1="90" x2="197" y2="462" stroke="#E0E0E0" stroke-width="1.5" opacity="0.7"/>
+            <!-- ── Cuerpo principal ── -->
+            <path d="
+              M 185,58
+              C 200,28 300,28 315,58
+              L 435,108
+              L 478,230
+              L 402,248
+              L 402,572
+              L 98,572
+              L 98,248
+              L 22,230
+              L 65,108
+              Z
+            "
+            fill="url(#fabricF)"
+            stroke="#D4D4D4"
+            stroke-width="1.5"/>
 
-          <path d="M 18,175 L 85,192 L 85,220 L 18,200 Z" fill="url(#sleeveShadeLB)" opacity="0.4"/>
-          <path d="M 382,175 L 315,192 L 315,220 L 382,200 Z" fill="url(#sleeveShadeRB)" opacity="0.4"/>
+            <!-- Cuello redondo con profundidad -->
+            <path d="M 185,58 C 195,105 215,122 250,125 C 285,122 305,105 315,58"
+                  fill="#F0F0F0" stroke="#D4D4D4" stroke-width="1.2"/>
+            <!-- Borde interior del cuello (ribete) -->
+            <path d="M 191,62 C 200,102 218,117 250,120 C 282,117 300,102 309,62"
+                  fill="none" stroke="#C8C8C8" stroke-width="1" opacity="0.6"/>
 
-          <!-- ─── DISEÑO ESPALDA: "La Vida es 1" ─── -->
-          <!--
-            Script caligráfico en azul teal, centrado en espalda
-            Color: #1089B5 (teal azul del diseño original)
-          -->
+            <!-- Sombras de volumen -->
+            <rect x="98" y="248" width="85" height="324" fill="url(#shadowL)"/>
+            <rect x="317" y="248" width="85" height="324" fill="url(#shadowR)"/>
 
-          <!-- "La" -->
-          <text
-            x="200" y="210"
-            font-family="'Dancing Script', 'Brush Script MT', cursive"
-            font-size="72"
-            font-weight="700"
-            fill="#1089B5"
-            text-anchor="middle"
-          >La</text>
+            <!-- Pliegue central sutil -->
+            <path d="M 250,130 Q 248,350 247,572"
+                  stroke="#E0E0E0" stroke-width="1.8" fill="none" opacity="0.7"/>
 
-          <!-- "Vida" -->
-          <text
-            x="200" y="295"
-            font-family="'Dancing Script', 'Brush Script MT', cursive"
-            font-size="82"
-            font-weight="700"
-            fill="#1089B5"
-            text-anchor="middle"
-          >Vida</text>
+            <!-- Sombra bajo las mangas -->
+            <path d="M 22,230 L 98,248 L 98,290 L 22,268 Z"
+                  fill="url(#sleeveBot)" opacity="0.6"/>
+            <path d="M 478,230 L 402,248 L 402,290 L 478,268 Z"
+                  fill="url(#sleeveBot)" opacity="0.6"/>
 
-          <!-- "es 1" -->
-          <text
-            x="200" y="378"
-            font-family="'Dancing Script', 'Brush Script MT', cursive"
-            font-size="72"
-            font-weight="700"
-            fill="#1089B5"
-            text-anchor="middle"
-          >es 1</text>
+            <!-- Dobladillo inferior (línea de costura) -->
+            <line x1="98" y1="555" x2="402" y2="555"
+                  stroke="#D0D0D0" stroke-width="1" opacity="0.6"/>
+            <!-- Dobladillo mangas -->
+            <line x1="22" y1="228" x2="98" y2="246"
+                  stroke="#D0D0D0" stroke-width="1" opacity="0.6"/>
+            <line x1="478" y1="228" x2="402" y2="246"
+                  stroke="#D0D0D0" stroke-width="1" opacity="0.6"/>
 
-        </svg>
+            <!-- ── LOGO FRENTE: ASUN GO❋❋D en negro, zona pecho ── -->
+            <g clip-path="url(#shirtClipF)">
+              <g transform="translate(250, 295)">
+
+                <!-- ASUN -->
+                <text x="0" y="-32"
+                  font-family="'Bebas Neue', 'Arial Black', sans-serif"
+                  font-size="58" fill="#111111"
+                  text-anchor="middle" letter-spacing="4">ASUN</text>
+
+                <!-- G -->
+                <text x="-92" y="24"
+                  font-family="'Bebas Neue', 'Arial Black', sans-serif"
+                  font-size="58" fill="#111111" text-anchor="middle">G</text>
+
+                <!-- Flor 1 -->
+                <g transform="translate(-36, 4)">
+                  <ellipse rx="14" ry="6"  fill="#111" transform="rotate(0)"/>
+                  <ellipse rx="10" ry="4.5" fill="#111" transform="rotate(45)"/>
+                  <ellipse rx="14" ry="6"  fill="#111" transform="rotate(90)"/>
+                  <ellipse rx="10" ry="4.5" fill="#111" transform="rotate(135)"/>
+                  <circle r="6.5" fill="#fff"/>
+                  <circle r="3"   fill="#111"/>
+                </g>
+
+                <!-- Flor 2 -->
+                <g transform="translate(22, 4)">
+                  <ellipse rx="14" ry="6"  fill="#111" transform="rotate(0)"/>
+                  <ellipse rx="10" ry="4.5" fill="#111" transform="rotate(45)"/>
+                  <ellipse rx="14" ry="6"  fill="#111" transform="rotate(90)"/>
+                  <ellipse rx="10" ry="4.5" fill="#111" transform="rotate(135)"/>
+                  <circle r="6.5" fill="#fff"/>
+                  <circle r="3"   fill="#111"/>
+                </g>
+
+                <!-- D -->
+                <text x="84" y="24"
+                  font-family="'Bebas Neue', 'Arial Black', sans-serif"
+                  font-size="58" fill="#111111" text-anchor="middle">D</text>
+
+              </g>
+            </g>
+
+          </svg>
+        </div>
+
+        <p class="design-detail">Logo pecho · Negro</p>
       </div>
-      <span class="view-label" style="color:#999; font-size:9px; letter-spacing:2px;">Diseño espalda</span>
+
+      <!-- ═══════════════════════════
+           ESPALDA
+      ════════════════════════════ -->
+      <div class="view-card">
+        <span class="view-badge">Espalda</span>
+
+        <div class="shirt-container">
+          <svg width="320" height="400" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fabricB" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="#EFEFEF"/>
+                <stop offset="30%"  stop-color="#FAFAFA"/>
+                <stop offset="60%"  stop-color="#FFFFFF"/>
+                <stop offset="100%" stop-color="#ECECEC"/>
+              </linearGradient>
+              <linearGradient id="shadowLB" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#C8C8C8" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="white"   stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="shadowRB" x1="100%" y1="0%" x2="0%" y2="0%">
+                <stop offset="0%"   stop-color="#C8C8C8" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="white"   stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="sleeveBotB" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%"   stop-color="#BBBBBB" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="white"   stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="shirtClipB">
+                <path d="
+                  M 185,58
+                  C 200,28 300,28 315,58
+                  L 435,108
+                  L 478,230
+                  L 402,248
+                  L 402,572
+                  L 98,572
+                  L 98,248
+                  L 22,230
+                  L 65,108
+                  Z
+                "/>
+              </clipPath>
+            </defs>
+
+            <!-- Cuerpo -->
+            <path d="
+              M 185,58
+              C 200,28 300,28 315,58
+              L 435,108
+              L 478,230
+              L 402,248
+              L 402,572
+              L 98,572
+              L 98,248
+              L 22,230
+              L 65,108
+              Z
+            "
+            fill="url(#fabricB)"
+            stroke="#D4D4D4"
+            stroke-width="1.5"/>
+
+            <!-- Cuello trasero (más cerrado) -->
+            <path d="M 185,58 C 198,78 218,88 250,90 C 282,88 302,78 315,58"
+                  fill="#F0F0F0" stroke="#D4D4D4" stroke-width="1.2"/>
+            <path d="M 192,62 C 202,76 220,84 250,86 C 280,84 298,76 308,62"
+                  fill="none" stroke="#C8C8C8" stroke-width="1" opacity="0.6"/>
+
+            <!-- Sombras volumen -->
+            <rect x="98" y="248" width="85" height="324" fill="url(#shadowLB)"/>
+            <rect x="317" y="248" width="85" height="324" fill="url(#shadowRB)"/>
+
+            <!-- Pliegue central -->
+            <path d="M 250,95 Q 248,350 247,572"
+                  stroke="#E0E0E0" stroke-width="1.8" fill="none" opacity="0.7"/>
+
+            <path d="M 22,230 L 98,248 L 98,290 L 22,268 Z" fill="url(#sleeveBotB)" opacity="0.6"/>
+            <path d="M 478,230 L 402,248 L 402,290 L 478,268 Z" fill="url(#sleeveBotB)" opacity="0.6"/>
+
+            <line x1="98"  y1="555" x2="402" y2="555" stroke="#D0D0D0" stroke-width="1" opacity="0.6"/>
+            <line x1="22"  y1="228" x2="98"  y2="246" stroke="#D0D0D0" stroke-width="1" opacity="0.6"/>
+            <line x1="478" y1="228" x2="402" y2="246" stroke="#D0D0D0" stroke-width="1" opacity="0.6"/>
+
+            <!-- ── DISEÑO ESPALDA: "La Vida es 1" ── -->
+            <g clip-path="url(#shirtClipB)">
+
+              <!-- "La" -->
+              <text x="250" y="240"
+                font-family="'Dancing Script', cursive"
+                font-size="90" font-weight="700"
+                fill="#1089B5"
+                text-anchor="middle">La</text>
+
+              <!-- "Vida" -->
+              <text x="250" y="355"
+                font-family="'Dancing Script', cursive"
+                font-size="102" font-weight="700"
+                fill="#1089B5"
+                text-anchor="middle">Vida</text>
+
+              <!-- "es 1" -->
+              <text x="250" y="465"
+                font-family="'Dancing Script', cursive"
+                font-size="90" font-weight="700"
+                fill="#1089B5"
+                text-anchor="middle">es 1</text>
+
+            </g>
+
+          </svg>
+        </div>
+
+        <p class="design-detail">«La Vida es 1» · Azul teal</p>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Paleta de colores -->
+    <div style="display:flex; gap:32px; align-items:center; flex-wrap:wrap; justify-content:center;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:48px; height:48px; background:#ffffff; border-radius:50%; border:1px solid #ddd;"></div>
+        <span style="font-size:10px; letter-spacing:2px; color:#aaa; text-transform:uppercase;">Tela</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:48px; height:48px; background:#111111; border-radius:50%;"></div>
+        <span style="font-size:10px; letter-spacing:2px; color:#aaa; text-transform:uppercase;">Logo</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <div style="width:48px; height:48px; background:#1089B5; border-radius:50%;"></div>
+        <span style="font-size:10px; letter-spacing:2px; color:#aaa; text-transform:uppercase;">Frase</span>
+      </div>
     </div>
 
   </div>
 
-  <p class="note">asungood &mdash; 2025</p>
+  <footer>asungood &mdash; 2025</footer>
 
 </body>
 </html>
