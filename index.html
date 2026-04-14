@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>asungood — Mockup Remera Oversize</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #EBEBDF;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 52px 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .brand-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 8px;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      font-weight: 400;
+    }
+
+    /* ── Grid ── */
+    .mockup-grid {
+      display: flex;
+      gap: 64px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .view-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .tshirt-wrap {
+      filter: drop-shadow(0 16px 40px rgba(0,0,0,0.28))
+              drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+
+    /* ── Footer note ── */
+    .note {
+      margin-top: 72px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #aaa;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-logo">ASUNGOOD</div>
+    <div class="subtitle">Remera Oversize &mdash; Mockup</div>
+  </header>
+
+  <div class="mockup-grid">
+
+    <!-- ════════════ FRENTE ════════════ -->
+    <div class="view">
+      <span class="view-label">Frente</span>
+      <div class="tshirt-wrap">
+        <svg width="360" height="450" viewBox="0 0 400 490" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Gradiente sutil para dar volumen -->
+            <linearGradient id="shirtGradF" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#1a1a1a"/>
+              <stop offset="45%"  stop-color="#111111"/>
+              <stop offset="100%" stop-color="#0a0a0a"/>
+            </linearGradient>
+            <!-- Costura central sutil -->
+            <linearGradient id="seamF" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"  stop-color="#222" stop-opacity="0"/>
+              <stop offset="30%" stop-color="#1e1e1e" stop-opacity="1"/>
+              <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- ─── Silueta remera oversize ─── -->
+          <!--
+            Oversize: hombros caídos, manga corta-ancha, cuerpo recto y largo
+          -->
+          <path d="
+            M 162,42
+            C 170,26 190,20 200,20
+            C 210,20 230,26 238,42
+            L 345,80
+            L 382,175
+            L 315,192
+            L 315,462
+            L 85,462
+            L 85,192
+            L 18,175
+            L 55,80
+            Z
+          " fill="url(#shirtGradF)"/>
+
+          <!-- Cuello redondo -->
+          <path d="M 162,42 C 168,72 183,84 200,86 C 217,84 232,72 238,42"
+                fill="#111111"/>
+
+          <!-- Línea de costura lateral sutil izquierda -->
+          <line x1="85" y1="192" x2="85" y2="462" stroke="#1e1e1e" stroke-width="1.2" opacity="0.6"/>
+          <!-- Línea de costura lateral sutil derecha -->
+          <line x1="315" y1="192" x2="315" y2="462" stroke="#0a0a0a" stroke-width="1.2" opacity="0.6"/>
+
+          <!-- ─── LOGO FRENTE (pecho centrado) ─── -->
+          <!--
+            Logo ASUN GO❋❋D en blanco — versión pequeña para pecho
+            Posición: zona pecho, centrado, ~y=200
+          -->
+          <g transform="translate(200, 215)">
+
+            <!-- Línea 1: ASUN -->
+            <text
+              x="0" y="-22"
+              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+              font-size="44"
+              fill="white"
+              text-anchor="middle"
+              letter-spacing="3"
+            >ASUN</text>
+
+            <!-- Línea 2: G [flor] [flor] D -->
+            <!-- G -->
+            <text
+              x="-72" y="18"
+              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+              font-size="44"
+              fill="white"
+              text-anchor="middle"
+              letter-spacing="0"
+            >G</text>
+
+            <!-- Flor 1 (primer O) -->
+            <g transform="translate(-28, 0)">
+              <!-- 8 pétalos alternados: 4 largos + 4 cortos en 45° -->
+              <ellipse rx="11" ry="5"  fill="white" transform="rotate(0)"/>
+              <ellipse rx="8"  ry="3.5" fill="white" transform="rotate(45)"/>
+              <ellipse rx="11" ry="5"  fill="white" transform="rotate(90)"/>
+              <ellipse rx="8"  ry="3.5" fill="white" transform="rotate(135)"/>
+              <!-- Centro -->
+              <circle r="5"   fill="#111111"/>
+              <circle r="2.5" fill="white"/>
+            </g>
+
+            <!-- Flor 2 (segundo O) -->
+            <g transform="translate(18, 0)">
+              <ellipse rx="11" ry="5"  fill="white" transform="rotate(0)"/>
+              <ellipse rx="8"  ry="3.5" fill="white" transform="rotate(45)"/>
+              <ellipse rx="11" ry="5"  fill="white" transform="rotate(90)"/>
+              <ellipse rx="8"  ry="3.5" fill="white" transform="rotate(135)"/>
+              <circle r="5"   fill="#111111"/>
+              <circle r="2.5" fill="white"/>
+            </g>
+
+            <!-- D -->
+            <text
+              x="66" y="18"
+              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+              font-size="44"
+              fill="white"
+              text-anchor="middle"
+              letter-spacing="0"
+            >D</text>
+
+          </g>
+          <!-- fin logo frente -->
+
+        </svg>
+      </div>
+      <span class="view-label" style="color:#aaa; font-size:9px; letter-spacing:2px;">Logo pecho centrado</span>
+    </div>
+
+    <!-- ════════════ ESPALDA ════════════ -->
+    <div class="view">
+      <span class="view-label">Espalda</span>
+      <div class="tshirt-wrap">
+        <svg width="360" height="450" viewBox="0 0 400 490" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shirtGradB" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#0a0a0a"/>
+              <stop offset="50%"  stop-color="#111111"/>
+              <stop offset="100%" stop-color="#1a1a1a"/>
+            </linearGradient>
+          </defs>
+
+          <!-- ─── Silueta espalda ─── -->
+          <path d="
+            M 162,42
+            C 170,26 190,20 200,20
+            C 210,20 230,26 238,42
+            L 345,80
+            L 382,175
+            L 315,192
+            L 315,462
+            L 85,462
+            L 85,192
+            L 18,175
+            L 55,80
+            Z
+          " fill="url(#shirtGradB)"/>
+
+          <!-- Cuello espalda (más alto) -->
+          <path d="M 162,42 C 168,55 183,62 200,63 C 217,62 232,55 238,42"
+                fill="#111111"/>
+
+          <line x1="85"  y1="192" x2="85"  y2="462" stroke="#1e1e1e" stroke-width="1.2" opacity="0.6"/>
+          <line x1="315" y1="192" x2="315" y2="462" stroke="#0a0a0a" stroke-width="1.2" opacity="0.6"/>
+
+          <!-- ─── LOGO ESPALDA: ASUN GO❋❋D grande, centrado ─── -->
+          <g transform="translate(200, 290)">
+
+            <!-- Línea 1: ASUN -->
+            <text
+              x="0" y="-52"
+              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+              font-size="68"
+              fill="white"
+              text-anchor="middle"
+              letter-spacing="4"
+            >ASUN</text>
+
+            <!-- Línea 2: G [flor] [flor] D -->
+            <!-- G -->
+            <text
+              x="-105" y="18"
+              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+              font-size="68"
+              fill="white"
+              text-anchor="middle"
+            >G</text>
+
+            <!-- Flor 1 -->
+            <g transform="translate(-38, -2)">
+              <ellipse rx="18" ry="7"  fill="white" transform="rotate(0)"/>
+              <ellipse rx="13" ry="5"  fill="white" transform="rotate(45)"/>
+              <ellipse rx="18" ry="7"  fill="white" transform="rotate(90)"/>
+              <ellipse rx="13" ry="5"  fill="white" transform="rotate(135)"/>
+              <circle r="8"   fill="#111111"/>
+              <circle r="4"   fill="white"/>
+            </g>
+
+            <!-- Flor 2 -->
+            <g transform="translate(30, -2)">
+              <ellipse rx="18" ry="7"  fill="white" transform="rotate(0)"/>
+              <ellipse rx="13" ry="5"  fill="white" transform="rotate(45)"/>
+              <ellipse rx="18" ry="7"  fill="white" transform="rotate(90)"/>
+              <ellipse rx="13" ry="5"  fill="white" transform="rotate(135)"/>
+              <circle r="8"   fill="#111111"/>
+              <circle r="4"   fill="white"/>
+            </g>
+
+            <!-- D -->
+            <text
+              x="100" y="18"
+              font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif"
+              font-size="68"
+              fill="white"
+              text-anchor="middle"
+            >D</text>
+
+          </g>
+          <!-- fin logo espalda -->
+
+        </svg>
+      </div>
+      <span class="view-label" style="color:#aaa; font-size:9px; letter-spacing:2px;">Diseño espalda completo</span>
+    </div>
+
+  </div>
+
+  <p class="note">asungood &mdash; 2025</p>
+
+</body>
+</html>
